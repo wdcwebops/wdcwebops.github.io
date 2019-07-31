@@ -7,12 +7,10 @@ loadTiQHeader('//tags.tiqcdn.com/utag/wd/westerndigital/qa/utag.sync.js');
 
 
 function loadTiQHeader(url) {
-   var script = document.createElement('script');
-   script.src = url;
-   var location = document.getElementsByTagName("body");
-   location.insertBefore(script, location.childNodes[0]);
-
-
+  var ref = document.getElementsByTagName( 'script' )[ 0 ];
+  var script = document.createElement('script');
+  script.src = url;
+  ref.parentNode.insertBefore( script, ref );
 }
 
   </script>
