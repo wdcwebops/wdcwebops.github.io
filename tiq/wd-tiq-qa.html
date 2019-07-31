@@ -1,5 +1,18 @@
   <script type="text/javascript">
 
+
+    var utag_data = {"analyticsTrackingID":"","eventName":"PAGE_LOAD",
+    "pageLocale":"en-US"};
+    loadTiQHeader('//tags.tiqcdn.com/utag/wd/westerndigital/qa/utag.sync.js');
+
+
+    function loadTiQHeader(url) {
+      var ref = document.getElementsByTagName( 'script' )[ 0 ];
+      var script = document.createElement('script');
+      script.src = url;
+      ref.parentNode.insertBefore( script, ref );
+    }
+
   (function(a,b,c,d){
   a='//tags.tiqcdn.com/utag/wd/westerndigital/qa/utag.js';
   b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
