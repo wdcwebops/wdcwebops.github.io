@@ -1,6 +1,4 @@
   <script type="text/javascript">
-
-
     window.utag_data = window.utag_data || {};
     // call Tealium TiQ analytics
     loadTiQBody('//tags.tiqcdn.com/utag/wd/westerndigital/qa/utag.js');
@@ -10,7 +8,7 @@
       script.type = 'text/javascript';
       script.async = true;
       var location = document.getElementsByTagName("body");
-      location.insertBefore(script, list.childNodes[0]);
+      location.insertBefore(script, location.childNodes[0]);
 
     }
 
