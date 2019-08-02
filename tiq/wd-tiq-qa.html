@@ -1,22 +1,24 @@
   <script type="text/javascript">
 
 
-    var utag_data = {"analyticsTrackingID":"","eventName":"PAGE_LOAD",
-    "pageLocale":"en-US"};
-    loadTiQHeader('//tags.tiqcdn.com/utag/wd/westerndigital/qa/utag.sync.js');
-
-
-    function loadTiQHeader(url) {
-      var ref = document.getElementsByTagName( 'script' )[ 0 ];
+    window.utag_data = window.utag_data || {};
+    // call Tealium TiQ analytics
+    loadTiQBody('//tags.tiqcdn.com/utag/wd/westerndigital/qa/utag.js');
+    function loadTiQBody (url){
       var script = document.createElement('script');
       script.src = url;
-      ref.parentNode.insertBefore( script, ref );
+      script.type = 'text/javascript';
+      script.async = true;
+      var location = document.getElementsByTagName("body");
+      location.insertBefore(script, list.childNodes[0]);
+
     }
 
-  (function(a,b,c,d){
-  a='//tags.tiqcdn.com/utag/wd/westerndigital/qa/utag.js';
-  b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
-  a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
-  })();
+    // call GTM analytics
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB43D4S');
 
   </script>
