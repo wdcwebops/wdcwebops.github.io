@@ -3,12 +3,13 @@
     // call Tealium TiQ analytics
     loadTiQBody('//tags.tiqcdn.com/utag/wd/westerndigital/qa/utag.js');
     function loadTiQBody (url){
-      var script = document.createElement('script');
+      var ref = document.getElementsByTagName( 'script' )[ 0 ];
+      var script = document.createElement( 'script' );
       script.src = url;
       script.type = 'text/javascript';
       script.async = true;
-      var location = document.getElementsByTagName("body");
-      location.insertBefore(script, location.childNodes[0]);
+
+      ref.parentNode.insertBefore( script, ref );
 
     }
 
